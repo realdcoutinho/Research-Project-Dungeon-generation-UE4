@@ -56,3 +56,8 @@ The function takes two pointers to FTriangulationNode objects, referred to as ro
 
 https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/436be407-8162-43aa-9358-6abc31139628
 
+To conclude the procedures within the C_Graph class, we invoke the Path() function. This is facilitated by utilizing the GetAllActorsOfClass() method to locate the C_Grid instance within the game world.
+
+The C_Grid entity is responsible for path calculation between two given locations. To execute this, an iteration is performed over the edges present in the mstEdgesArray. During this iteration, the starting location of each edge is identified and subsequently passed as an argument to the AStarPath() function within the C_Grid class.
+
+Should there arise any inquiries regarding the specific data types and structures employed throughout these processes, comprehensive information can be referenced in the DataTypes.h file situated under the directory path Source > DungeonGeneration > DataTypes.h. This file encapsulates the fundamental definitions utilized in the context of this intricate procedure.
