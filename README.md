@@ -17,4 +17,33 @@ Once the random center is calculated, it is incorporated into the m_pGrid, which
 
 https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/927ada2c-2ec6-4a06-b244-643f1e367561
 
+Triangulation: 
+Now, having established the static meshes for the dungeons with their visibility and parameters properly configured, the focus shifts towards the C_Graph component. Its initial objective revolves around the generation of a Delaunay Triangulation using the Bowyer-Watson Algorithm. Commencing this process involves the creation of a super triangle. Ensuring that the circumcircle engendered by this super triangle effectively encompasses all the center points of the dungeon locations is of paramount importance, necessitating a significantly larger size.
+
+Subsequently, the compilation of all these dungeon center points ensues, and the C_Graph initiates the Triangulation procedure. Below, you will find a representation of the aforementioned algorithm in pseudo-code.
+
+locations = TArray<FVector> //center of each dungeon
+triangulation = empty TArray<FTriangles>
+add super-triangle to triangulation 
+
+for each center in location
+	badTriangles = empty TArray<FTriangles>
+	for each triangle in triangulation 
+		if center inside circumcircle of triangle
+			badTriangles.Add(triangle)
+	polygon = empty TArray<FTriangulationEdge>
+	for each triangle in badTriangles
+		for each edge in triangle
+			if edge is not not shared by any other triangle in badTriangle
+				polygon.Add(edge)
+	for each triangle in badTriangles
+		triangulation.Remove(triangle)
+	for each edge in polygon
+		newTriangle = (edge.Vertex[0], edge.Vertex[1], center)
+		triangulation.Add(newTriangle)
+for each triangle in triangulation
+	if triangle contains vertex from super-Triangle
+		triangulation.Remove(triangle)
+return Triangulation
+
 
