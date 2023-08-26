@@ -74,4 +74,10 @@ Navigating through each FCell within the array involves leveraging the functions
 
 With those preliminary matters addressed, we can seamlessly resume our progression from the point where we paused—specifically, at the juncture of the AStarPath() function. The subsequent pseudo-code is delineated below:
 
-![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/6e74dc65-d03b-401b-8e2f-63831c1686fe)
+![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/827b815d-50c4-4bef-8b97-9c1f3da32182)
+
+
+![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/fca8307c-366c-48b4-868c-545335318702)
+
+
+
