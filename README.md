@@ -26,24 +26,10 @@ locations = TArray<FVector> //center of each dungeon
 triangulation = empty TArray<FTriangles>
 add super-triangle to triangulation 
 
-for each center in location
-	badTriangles = empty TArray<FTriangles>
-	for each triangle in triangulation 
-		if center inside circumcircle of triangle
-			badTriangles.Add(triangle)
-	polygon = empty TArray<FTriangulationEdge>
-	for each triangle in badTriangles
-		for each edge in triangle
-			if edge is not not shared by any other triangle in badTriangle
-				polygon.Add(edge)
-	for each triangle in badTriangles
-		triangulation.Remove(triangle)
-	for each edge in polygon
-		newTriangle = (edge.Vertex[0], edge.Vertex[1], center)
-		triangulation.Add(newTriangle)
-for each triangle in triangulation
-	if triangle contains vertex from super-Triangle
-		triangulation.Remove(triangle)
-return Triangulation
+![pseudoCode](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/4613edca-2d0d-4424-b9fe-dae556a82940)
+
+
+https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/a66e5b14-517b-436d-98e1-709a5620950f
+
 
 
