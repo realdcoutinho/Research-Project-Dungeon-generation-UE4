@@ -13,3 +13,7 @@ To introduce an element of randomness into the dungeon generation, a random inte
 With the foundational parameters set, the next step is to define dungeon attributes. By employing the previously mentioned FRandomStream alongside the specified minimum and maximum center positions, a genuinely random center point is computed. The same process is repeated for determining the dungeon's width and depth, utilizing the designated measurement ranges.
 Once the random center is calculated, it is incorporated into the m_pGrid, which identifies the corresponding cell and returns both its center location and index. At this juncture, the system examines existing dungeons. A radius is established (maximum size of width and depth plus a margin). If another dungeon already occupies the space defined by the current dungeon's center and the calculated radius, the process restarts. Conversely, if the area is unoccupied, the cell is designated as filled, and the current dungeon's attributes (center, width, and depth) are finalized. Furthermore, the dungeon's visibility is activated.
 
+
+
+https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/44115f43-e926-4a9e-9829-5d4367b6cb52
+
