@@ -64,7 +64,7 @@ Should there arise any inquiries regarding the specific data types and structure
 
 
 Grid Creation:
-Before delving into the intricacies of the Path() function that the C_Graph has passed to us, it is prudent to provide a brief overview of the class itself—its inception, purpose, and functionalities.
+Before delving into the intricacies of the AStartPath() function that the C_Graph has passed to us, it is prudent to provide a brief overview of the class itself—its inception, purpose, and functionalities.
 
 As discerned from our prior discussions, the C_Grid class serves two pivotal roles: the first involves the establishment of the grid structure, delineating the placement of dungeons and meticulously managing their availability. The second pertains to the critical function of navigating paths between locations, a responsibility it undertakes through interactions with C_Graph.
 
