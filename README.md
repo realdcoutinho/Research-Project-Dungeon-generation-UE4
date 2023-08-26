@@ -31,5 +31,18 @@ add super-triangle to triangulation
 
 https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/a66e5b14-517b-436d-98e1-709a5620950f
 
+Mininmum Spanning Tree: 
+The process of triangulation, while significant, proves insufficient to meet the objectives outlined in this project. Merely establishing edges through triangulation falls short of our intent to transform each edge into a functional pathway linking the dungeons. Our aspiration encompasses the creation of a comprehensive approach, enabling the identification of a minimum spanning path interconnecting all dungeons, characterized by the absence of redundant routes. To achieve this, we turn to an additional algorithm, namely the Minimum Spanning Tree (MST) algorithm.
 
+A Minimum Spanning Tree represents a subset of edges extracted from a connected, edge-weighted graph. This subset serves the purpose of interconnecting all vertices devoid of cycles, all the while maintaining the minimal aggregate edge weight possible. Essentially, this algorithm offers a method to determine the most resource-efficient means to establish connections among a given set of vertices.
 
+However, prior to embarking on the coding phase for this algorithm, several preparatory measures are imperative. Foremost, a comprehensive inventory of edges to be employed within the Minimum Spanning Tree must be assembled.
+
+![getedges](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/9498b0cc-8e49-44ea-8b05-93eefefd3fc1)
+
+We move on to node creation. 
+The code begins by clearing the nodesArray, which is a collection to hold nodes. Then, a map called nodesMap is created. This map will help organize nodes based on their positions. For each edge in the triangulationEdges, the code checks if nodes already exist for the start and end points of the edge in the nodesMap. If not, new nodes are created and initialized with the corresponding locations. Each edge is then connected to the appropriate nodes by adding the edge to their connection lists.
+Unique nodes are extracted from the nodesMap and added to the nodesArray.
+Moving on, a new array called allEdges is set up. For each node in the nodesArray, the code looks at the edges in its connections list. It identifies the corresponding end node by searching within the nodesArray. New edges are then formed using these start and end nodes, and these edges are added to the allEdges array.
+After that, each node's _connections list is updated to contain all the edges from allEdges. Additionally, the Union-Find data structure is initialized for each node. This involves setting each node as its own parent and assigning a rank of 0.
+This entire process effectively establishes connections between nodes through edges, while also preparing the data structure for subsequent operations.
