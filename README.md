@@ -40,9 +40,18 @@ However, prior to embarking on the coding phase for this algorithm, several prep
 
 ![getedges](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/9498b0cc-8e49-44ea-8b05-93eefefd3fc1)
 
-We move on to node creation. 
-The code begins by clearing the nodesArray, which is a collection to hold nodes. Then, a map called nodesMap is created. This map will help organize nodes based on their positions. For each edge in the triangulationEdges, the code checks if nodes already exist for the start and end points of the edge in the nodesMap. If not, new nodes are created and initialized with the corresponding locations. Each edge is then connected to the appropriate nodes by adding the edge to their connection lists.
+Onto the node creation
+We begin by clearing the nodesArray, which is a collection to hold nodes. Then, a map called nodesMap is created. This map will help organize nodes based on their positions. For each edge in the triangulationEdges, the code checks if nodes already exist for the start and end points of the edge in the nodesMap. If not, new nodes are created and initialized with the corresponding locations. Each edge is then connected to the appropriate nodes by adding the edge to their connection lists.
 Unique nodes are extracted from the nodesMap and added to the nodesArray.
 Moving on, a new array called allEdges is set up. For each node in the nodesArray, the code looks at the edges in its connections list. It identifies the corresponding end node by searching within the nodesArray. New edges are then formed using these start and end nodes, and these edges are added to the allEdges array.
 After that, each node's _connections list is updated to contain all the edges from allEdges. Additionally, the Union-Find data structure is initialized for each node. This involves setting each node as its own parent and assigning a rank of 0.
 This entire process effectively establishes connections between nodes through edges, while also preparing the data structure for subsequent operations.
+
+Having successfully completed the Triangulation process, including the extraction and validation of edges, as well as the creation of nodes, we are now prepared to execute the Minimum Spanning Tree (MST) algorithm. 
+The provided pseudo-code for this operation is presented below:
+![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/b075b38b-722a-4bae-b775-093c815606c2)
+
+On the Union helper function:
+The function takes two pointers to FTriangulationNode objects, referred to as rootA and rootB, as parameters. These nodes represent the root elements of the sets that need to be merged. The core logic of the function revolves around comparing the ranks of these two root nodes. The rank is a measure of the depth or height of a node within its tree structure. It reflects the number of nodes in the longest path from the node to a leaf.
+
+
