@@ -92,3 +92,18 @@ The project's primary aim was to create an innovative and dynamic process that e
 The incorporation of the MST algorithm significantly elevated the project's complexity by introducing a minimum spanning path that seamlessly interconnects all dungeons, devoid of redundancies. This pioneering approach not only aligns with the project's core objective but also paves the way for intriguing future work.
 One potential avenue for future exploration involves refining the Minimum Spanning Tree algorithm further. A specific aspect could be the exploration of different algorithms for the MST calculation, possibly focusing on efficient methodologies for calculating the diameter of the MST. The diameter of the MST carries substantial implications for the overall connectivity and traversal efficiency of the dungeon network.
  this research journey has bestowed upon me a solid groundwork for mastering procedural dungeon generation within UE4. It serves as a testament to the latent possibilities that emerge when algorithmic creativity intertwines with the art of game development. This accomplishment beckons forth an ongoing voyage of exploration and innovation in the captivating realm of dynamic gameplay environments, fueling my personal growth as a developer
+
+Sources:
+https://www.youtube.com/watch?v=TlLIOgWYVpI
+https://www.youtube.com/watch?v=rBY2Dzej03A&t=260s
+https://www.gamedeveloper.com/programming/procedural-dungeon-generation-algorithm
+https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/
+https://www.youtube.com/watch?v=jsmMtJpPnhU&t=1s
+https://www.youtube.com/watch?v=cplfcGZmX7I
+https://www.youtube.com/watch?v=GctAunEuHt4&t=1s
+https://www.youtube.com/watch?v=4ySSsESzw2Y&t=241s
+https://en.wikipedia.org/wiki/Bowyer–Watson_algorithm
+https://www.newcastle.edu.au/__data/assets/pdf_file/0018/22482/07_An-implementation-of-Watsons-algorithm-for-computing-two-dimensional-Delaunay-triangulations.pdf
+https://www.youtube.com/watch?v=-L-WgKMFuhE
+https://www.youtube.com/watch?v=71CEj4gKDnE
+https://mat.uab.cat/~alseda/MasterOpt/AStar-Algorithm.pdf
