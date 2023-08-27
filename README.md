@@ -234,6 +234,6 @@ This research journey has bestowed upon me a solid groundwork for mastering proc
 * [A* algorithm shortest path finder for 5 Axis laser ablation](https://andrewjinho.com/2018/09/10/aa-star-search-algorithm-shortest-path-finder/)
 
 ##Contact
-*[Diogo de Moura Coutingo](https://www.linkedin.com/in/diogo-de-moura-coutinho-888866158/)
+* [Diogo de Moura Coutingo](https://www.linkedin.com/in/diogo-de-moura-coutinho-888866158/)
 
 
