@@ -18,6 +18,9 @@ Once the random center is calculated, it is incorporated into the m_pGrid, which
 https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/927ada2c-2ec6-4a06-b244-643f1e367561
 
 ## Triangulation: 
+
+![DelauneyTriangulation_Bower-Watson](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/b4ed4fe8-e4e7-46f6-a1ae-2e325019bd72)
+
 Now, having established the static meshes for the dungeons with their visibility and parameters properly configured, the focus shifts towards the **C_Graph** component. Its initial objective revolves around the generation of a **Delaunay Triangulation** using the **Bowyer-Watson Algorithm**. Commencing this process involves the creation of a super triangle. Ensuring that the circumcircle engendered by this super triangle effectively encompasses all the center points of the dungeon locations is of paramount importance, necessitating a significantly larger size.
 
 Subsequently, the compilation of all these dungeon center points ensues, and the **C_Graph** initiates the Triangulation procedure. Below, you will find a representation of the aforementioned algorithm in pseudo-code.
@@ -51,7 +54,7 @@ for each triangle in triangulation
 		triangulationEdges.AddUnique(edge)
 ```
 
-https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/a66e5b14-517b-436d-98e1-709a5620950f
+![TriangulationUE4](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/ded10018-5c67-49ae-ba3b-9fe0068f13eb)
 
 ## Mininmum Spanning Tree: 
 The process of triangulation, while significant, proves insufficient to meet the objectives outlined in this project. Merely establishing edges through triangulation falls short of our intent to transform each edge into a **functional** pathway linking the dungeons. Our aspiration encompasses the creation of a comprehensive approach, enabling the identification of a **minimum spanning path** interconnecting all dungeons, characterized by the absence of redundant routes. To achieve this, we turn to an additional algorithm, namely the **Minimum Spanning Tree** **(MST)** algorithm.
@@ -99,9 +102,9 @@ for each edge in triangulationEdges
 The function takes two pointers to _FTriangulationNode_ objects, referred to as **rootA** and **rootB**, as parameters. These nodes represent the root elements of the sets that need to be merged. The core logic of the function revolves around comparing the _ranks_ of these two root nodes. The rank is a measure of the depth or height of a node within its tree structure. It reflects the number of nodes in the longest path from the node to a leaf.
 
 * **FindRoot helper funtion**:
-It identifies and returns the root node in a union-find data structure. The loop checks if the current node's parent isn't itself, iteratively updates the node to its parent until the root is found, and then returns the root node's pointer. 
+It identifies and returns the root node in a union-find data structure. The loop checks if the current node's parent isn't itself, iteratively updates the node to its parent until the root is found, and then returns the root node's pointer.
 
-https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/436be407-8162-43aa-9358-6abc31139628
+![mstUE4](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/f5369a93-4949-463a-90e4-b52bc4e50045)
 
 To conclude the procedures within the **C_Graph** class, we invoke the **Path()** function. This is facilitated by utilizing the **GetAllActorsOfClass()** method to locate the **C_Grid** instance within the game world.
 
