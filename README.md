@@ -212,7 +212,7 @@ This research journey has bestowed upon me a solid groundwork for mastering proc
 * [Procedural Dungeon Generation Algorithm Explained - TinyKeep](https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/)
 * [Procedurally Generated 3D Dungeons](https://www.youtube.com/watch?v=rBY2Dzej03A&t=260s)
 * [Procedural Map Generation Techniques](https://www.youtube.com/watch?v=TlLIOgWYVpI)
-*[Delaunay Triangulation](https://www.youtube.com/watch?v=GctAunEuHt4&t=1s)
+* [Delaunay Triangulation](https://www.youtube.com/watch?v=GctAunEuHt4&t=1s)
 * [Delaunay Triangulation - Bower-Watson](https://www.youtube.com/watch?v=4ySSsESzw2Y&t=241s)
 * [Bowyer–Watson Algorithm - pseudo-code](https://en.wikipedia.org/wiki/Bowyer–Watson_algorithm)
 * [An implementation of Watson's algorithm for computing
