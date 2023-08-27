@@ -50,6 +50,9 @@ The provided pseudo-code for this operation is presented below:
 On the Union helper function:
 The function takes two pointers to FTriangulationNode objects, referred to as rootA and rootB, as parameters. These nodes represent the root elements of the sets that need to be merged. The core logic of the function revolves around comparing the ranks of these two root nodes. The rank is a measure of the depth or height of a node within its tree structure. It reflects the number of nodes in the longest path from the node to a leaf.
 
+On FindRoot helper funtion:
+It identifies and returns the root node in a union-find data structure. The loop checks if the current node's parent isn't itself, iteratively updates the node to its parent until the root is found, and then returns the root node's pointer. 
+
 https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/436be407-8162-43aa-9358-6abc31139628
 
 To conclude the procedures within the C_Graph class, we invoke the Path() function. This is facilitated by utilizing the GetAllActorsOfClass() method to locate the C_Grid instance within the game world.
