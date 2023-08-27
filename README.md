@@ -208,34 +208,22 @@ One potential avenue for future exploration involves refining the Minimum Spanni
 This research journey has bestowed upon me a solid groundwork for mastering procedural dungeon generation within **UE4**. It serves as a testament to the latent possibilities that emerge when algorithmic creativity intertwines with the art of game development. This accomplishment beckons forth an ongoing voyage of exploration and innovation in the captivating realm of dynamic gameplay environments, fueling my personal growth as a developer
 
 ## Sources:
-[Procedural Dungeon Generation](https://www.gamedeveloper.com/programming/procedural-dungeon-generation-algorithm)
-[Procedural Dungeon Generation Algorithm Explained - TinyKeep](https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/)
-[Procedurally Generated 3D Dungeons](https://www.youtube.com/watch?v=rBY2Dzej03A&t=260s)
-[Procedural Map Generation Techniques](https://www.youtube.com/watch?v=TlLIOgWYVpI)
-[Delaunay Triangulation](https://www.youtube.com/watch?v=GctAunEuHt4&t=1s)
-[Delaunay Triangulation - Bower-Watson](https://www.youtube.com/watch?v=4ySSsESzw2Y&t=241s)
-[Bowyer–Watson Algorithm - pseudo-code](https://en.wikipedia.org/wiki/Bowyer–Watson_algorithm)
-[An implementation of Watson's algorithm for computing
+* [Procedural Dungeon Generation](https://www.gamedeveloper.com/programming/procedural-dungeon-generation-algorithm)
+* [Procedural Dungeon Generation Algorithm Explained - TinyKeep](https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/)
+* [Procedurally Generated 3D Dungeons](https://www.youtube.com/watch?v=rBY2Dzej03A&t=260s)
+* [Procedural Map Generation Techniques](https://www.youtube.com/watch?v=TlLIOgWYVpI)
+*[Delaunay Triangulation](https://www.youtube.com/watch?v=GctAunEuHt4&t=1s)
+* [Delaunay Triangulation - Bower-Watson](https://www.youtube.com/watch?v=4ySSsESzw2Y&t=241s)
+* [Bowyer–Watson Algorithm - pseudo-code](https://en.wikipedia.org/wiki/Bowyer–Watson_algorithm)
+* [An implementation of Watson's algorithm for computing
 2-dimensional Delaunay triangulations 
 ](https://www.newcastle.edu.au/__data/assets/pdf_file/0018/22482/07_An-implementation-of-Watsons-algorithm-for-computing-two-dimensional-Delaunay-triangulations.pdf)
-[Prim's Minimum Spanning Tree Algorithm | Graph Theory](https://www.youtube.com/watch?v=jsmMtJpPnhU&t=1s)
-[Algoritmo de Prim ](https://www.youtube.com/watch?v=cplfcGZmX7I)
-[A* Pathfinding](https://www.youtube.com/watch?v=-L-WgKMFuhE)
-[A* (A Star) Search and Heuristics Intuition](https://www.youtube.com/watch?v=71CEj4gKDnE)
-[A* Algorithm pseudocode](https://mat.uab.cat/~alseda/MasterOpt/AStar-Algorithm.pdf)
+* [Prim's Minimum Spanning Tree Algorithm | Graph Theory](https://www.youtube.com/watch?v=jsmMtJpPnhU&t=1s)
+* [Algoritmo de Prim ](https://www.youtube.com/watch?v=cplfcGZmX7I)
+* [A* Pathfinding](https://www.youtube.com/watch?v=-L-WgKMFuhE)
+* [A* (A Star) Search and Heuristics Intuition](https://www.youtube.com/watch?v=71CEj4gKDnE)
+* [A* Algorithm pseudocode](https://mat.uab.cat/~alseda/MasterOpt/AStar-Algorithm.pdf)
 
 
 
-https://www.youtube.com/watch?v=TlLIOgWYVpI
-https://www.youtube.com/watch?v=rBY2Dzej03A&t=260s
-https://www.gamedeveloper.com/programming/procedural-dungeon-generation-algorithm
-https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/
-https://www.youtube.com/watch?v=jsmMtJpPnhU&t=1s
-https://www.youtube.com/watch?v=cplfcGZmX7I
-https://www.youtube.com/watch?v=GctAunEuHt4&t=1s
-https://www.youtube.com/watch?v=4ySSsESzw2Y&t=241s
-https://en.wikipedia.org/wiki/Bowyer–Watson_algorithm
-https://www.newcastle.edu.au/__data/assets/pdf_file/0018/22482/07_An-implementation-of-Watsons-algorithm-for-computing-two-dimensional-Delaunay-triangulations.pdf
-https://www.youtube.com/watch?v=-L-WgKMFuhE
-https://www.youtube.com/watch?v=71CEj4gKDnE
-https://mat.uab.cat/~alseda/MasterOpt/AStar-Algorithm.pdf
+
