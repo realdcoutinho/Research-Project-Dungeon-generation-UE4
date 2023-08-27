@@ -47,9 +47,7 @@ triangulationEdges= empty TArray<FTriangulationEdge>
 for each triangle in triangulation
 	for each edge in triangle
 		triangulationEdges.AddUnique(edge)
-  ```
-![pseudoCode](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/4613edca-2d0d-4424-b9fe-dae556a82940)
-
+```
 
 https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/a66e5b14-517b-436d-98e1-709a5620950f
 
@@ -66,8 +64,6 @@ for each triangle in triangulation
 	for each edge in triangle
 		triangulationEdges.AddUnique(edge)
 ```
-
-![getedges](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/9498b0cc-8e49-44ea-8b05-93eefefd3fc1)
 
 * **Node creation**:
 We begin by clearing the _nodesArray_, which is a collection to hold nodes. Then, a map called _nodesMap_ is created. This map will help organize nodes based on their positions. For each _edge_ in the _triangulationEdges_, the code checks if nodes already exist for the start and end points of the edge in the _nodesMap_. If not, new nodes are created and initialized with the corresponding locations. Each edge is then connected to the appropriate nodes by adding the edge to their _connection lists_.
@@ -96,8 +92,6 @@ for each edge in triangulationEdges
 		if(edgeCount == (nodesArray.Num - 1)
 			break
 ```
-
-![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/b075b38b-722a-4bae-b775-093c815606c2)
 
 * **Union helper function**:
 The function takes two pointers to _FTriangulationNode_ objects, referred to as **rootA** and **rootB**, as parameters. These nodes represent the root elements of the sets that need to be merged. The core logic of the function revolves around comparing the _ranks_ of these two root nodes. The rank is a measure of the depth or height of a node within its tree structure. It reflects the number of nodes in the longest path from the node to a leaf.
@@ -197,11 +191,6 @@ for each cell* in path
 	cell.isCorridor = true;
 	cell.IsHiddenInGame(false)
 ```
-
-![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/827b815d-50c4-4bef-8b97-9c1f3da32182)
-
-
-![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/fca8307c-366c-48b4-868c-545335318702)
 
 Having traversed through comprehensive explanations encompassing various intricacies, navigated through challenges, and meticulously addressed pivotal points, I now take the privilege of unveiling the culminating outcome within the **Unreal Engine 4 (UE4)** environment.
 
