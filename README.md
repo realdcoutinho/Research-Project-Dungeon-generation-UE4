@@ -15,8 +15,6 @@ Once the random center is calculated, it is incorporated into the m_pGrid, which
 
 ![DungeonCreation Giph](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/3392140b-5b69-439c-a8af-1bd3c20ec900)
 
-https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/927ada2c-2ec6-4a06-b244-643f1e367561
-
 ## Triangulation: 
 
 ![DelauneyTriangulation_Bower-Watson](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/b4ed4fe8-e4e7-46f6-a1ae-2e325019bd72)
