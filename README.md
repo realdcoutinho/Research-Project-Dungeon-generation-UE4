@@ -13,6 +13,13 @@ To introduce an element of randomness into the dungeon generation, a random inte
 With the foundational parameters set, the next step is to define dungeon attributes. By employing the previously mentioned **FRandomStream** alongside the specified minimum and maximum center positions, a genuinely random center point is computed. The same process is repeated for determining the dungeon's width and depth, utilizing the designated measurement ranges.
 Once the random center is calculated, it is incorporated into the m_pGrid, which identifies the corresponding cell and returns both its center location and index. At this juncture, the system examines existing dungeons. A radius is established (maximum size of width and depth plus a margin). If another dungeon already occupies the space defined by the current dungeon's center and the calculated radius, the process restarts. Conversely, if the area is unoccupied, the cell is designated as filled, and the current dungeon's attributes (center, width, and depth) are finalized. Furthermore, the dungeon's visibility is activated.
 
+https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/927ada2c-2ec6-4a06-b244-643f1e367561
+
+## Triangulation: 
+Now, having established the static meshes for the dungeons with their visibility and parameters properly configured, the focus shifts towards the **C_Graph** component. Its initial objective revolves around the generation of a **Delaunay Triangulation** using the **Bowyer-Watson Algorithm**. Commencing this process involves the creation of a super triangle. Ensuring that the circumcircle engendered by this super triangle effectively encompasses all the center points of the dungeon locations is of paramount importance, necessitating a significantly larger size.
+
+Subsequently, the compilation of all these dungeon center points ensues, and the **C_Graph** initiates the Triangulation procedure. Below, you will find a representation of the aforementioned algorithm in pseudo-code.
+
 ```
 for each center in location
 	badTriangles = empty TArray<FTriangles>
@@ -41,14 +48,6 @@ for each triangle in triangulation
 	for each edge in triangle
 		triangulationEdges.AddUnique(edge)
   ```
-
-https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/927ada2c-2ec6-4a06-b244-643f1e367561
-
-## Triangulation: 
-Now, having established the static meshes for the dungeons with their visibility and parameters properly configured, the focus shifts towards the **C_Graph** component. Its initial objective revolves around the generation of a **Delaunay Triangulation** using the **Bowyer-Watson Algorithm**. Commencing this process involves the creation of a super triangle. Ensuring that the circumcircle engendered by this super triangle effectively encompasses all the center points of the dungeon locations is of paramount importance, necessitating a significantly larger size.
-
-Subsequently, the compilation of all these dungeon center points ensues, and the **C_Graph** initiates the Triangulation procedure. Below, you will find a representation of the aforementioned algorithm in pseudo-code.
-
 ![pseudoCode](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/4613edca-2d0d-4424-b9fe-dae556a82940)
 
 
@@ -61,6 +60,13 @@ A **Minimum Spanning Tree** represents a subset of edges extracted from a connec
 
 However, prior to embarking on the coding phase for this algorithm, several preparatory measures are imperative. Foremost, a comprehensive inventory of edges to be employed within the **Minimum Spanning Tree** must be assembled.
 
+```
+triangulationEdges= empty TArray<FTriangulationEdge>
+for each triangle in triangulation
+	for each edge in triangle
+		triangulationEdges.AddUnique(edge)
+```
+
 ![getedges](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/9498b0cc-8e49-44ea-8b05-93eefefd3fc1)
 
 * **Node creation**:
@@ -72,6 +78,25 @@ This entire process effectively establishes connections between nodes through ed
 
 Having successfully completed the **Triangulation** process, including the extraction and validation of edges, as well as the creation of nodes, we are now prepared to execute the **Minimum Spanning Tree (MST)** algorithm. 
 The provided pseudo-code for this operation is presented below:
+
+```
+mstEdgesArray.Empty()
+
+triangulationEdges.sort() // this sort will occur upon their cost.
+int edgeCount = 0
+
+for each edge in triangulationEdges
+	FTriangulationNode* rootA = find root of edge.start node
+	FTriangulationNode* rootB = find root of edge.end node
+
+	if(rootA != rootB)
+		mstEdgesArray.Add(edge)
+		Union(rootA, rootB)
+		++edgeCount
+		if(edgeCount == (nodesArray.Num - 1)
+			break
+```
+
 ![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/b075b38b-722a-4bae-b775-093c815606c2)
 
 * **Union helper function**:
@@ -99,6 +124,79 @@ As alluded to earlier, the **Unreal Engine 4 (UE4)** framework imposes constrain
 Navigating through each **FCell** within the array involves leveraging the functions **GetColumnIndex()__ and **GetRowIndex()** to extract the _column_ and _row_ values, respectively, for the current cell under consideration. A distinct **TArray<FVector>** facilitates the representation of possible _2D directions_ in which each cell can be interconnected. Upon meticulous computations, the outcome materializes in the form of a **FGridConnection**, seamlessly added into the connections **TArray<FGridConnection>** intrinsic to the cell.
 
 With those preliminary matters addressed, we can resume our progression from the point where we paused—specifically, at the juncture of the **AStarPath()** function. The subsequent pseudo-code is delineated below:
+
+```
+startIndex = GetCellIndex(startPos)
+			endIndex = GetCellIndex(endPos)
+			
+			*startCell = CellAtIndex(startindex)
+			*endCell = CellAtIndex(endIndex)
+			
+			path = empty TArray<FCell*>
+			openList = empty TArray<FNodeRecord>
+			closedList = emply TArray<FNodeRecord>
+			current NodeRecord;
+			
+			startRecord.pNode = startCell
+			startRecord.estimatedTotalCost = Cost(startCell, endCell)
+			openList.AddUnique(startRecord)
+			float costSoFar
+			
+			while(openList.Num() != 0)
+					lowestCostIndex = INDEX_NONE
+					float lowestCost = FLT_MAX
+					for each nodeRecord in openList
+						if(nodeRecord.estimatedCost < lowestCost)
+							lowestCost = nodeRecord.estimatedCost
+							lowestCostIndex  = nodeRecord.index
+					
+				if( lowestCostIndex != IndexNonde)
+						currentRecord = openList.At(lowestCostIndex)
+					
+				if(currentRecord.pNode == endCell)
+					break // FOUND
+				
+				recordConnections = empty TArray<FGridConnection>
+				recordConnections = currentRecord.pNode.connections
+				
+				for each connection in recordConnection
+					costSoFar = currentRecord.CostSoFar + connection.cost
+					for each closed in closedList
+						if( connection.To == closed.node.index)
+							if(closed.costSoFar <= costSoFar)
+								break
+							else
+								closedList.Remove(closed)
+				for each open in openList
+				if(connection.from == open.node.index)
+				if(open.costSoFar <= costSoFar)
+				break;
+								else
+									openList.Remove(open)
+				
+						FNodeRecord newRecord
+						NewRecord.node = GetCellAtIndex(connection.To)
+						newRecord.connection = connection
+						newRecord.costSoFar - costSoFar
+						newRecord.estimatedTotalCost = costSoFar + Cost(newRecord.node, endCell)
+						openList.AddUnique(newRecord)
+				
+			openList.Remove(currentRecord);
+			closedList.AddUnique(currentRecord);
+
+			
+//////
+
+while(currenRecord.node != startCell)
+	path.AddUnique(currentRecord.node)
+	for each closed in closedList
+		if(currentRecord.conncetion.from == closed.node.index
+			currentRecord = closed
+
+for each cell* in path
+	cell.isCorridor = true;
+	cell.IsHiddenInGame(false)
+```
 
 ![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/827b815d-50c4-4bef-8b97-9c1f3da32182)
 
