@@ -121,71 +121,69 @@ With those preliminary matters addressed, we can resume our progression from the
 
 ```
 startIndex = GetCellIndex(startPos)
-			endIndex = GetCellIndex(endPos)
+endIndex = GetCellIndex(endPos)
 			
-			*startCell = CellAtIndex(startindex)
-			*endCell = CellAtIndex(endIndex)
+*startCell = CellAtIndex(startindex)
+*endCell = CellAtIndex(endIndex)
 			
-			path = empty TArray<FCell*>
-			openList = empty TArray<FNodeRecord>
-			closedList = emply TArray<FNodeRecord>
-			current NodeRecord;
+path = empty TArray<FCell*>
+openList = empty TArray<FNodeRecord>
+closedList = emply TArray<FNodeRecord>
+current NodeRecord;
 			
-			startRecord.pNode = startCell
-			startRecord.estimatedTotalCost = Cost(startCell, endCell)
-			openList.AddUnique(startRecord)
-			float costSoFar
+startRecord.pNode = startCell
+startRecord.estimatedTotalCost = Cost(startCell, endCell)
+openList.AddUnique(startRecord)
+float costSoFar
 			
-			while(openList.Num() != 0)
-					lowestCostIndex = INDEX_NONE
-					float lowestCost = FLT_MAX
-					for each nodeRecord in openList
-						if(nodeRecord.estimatedCost < lowestCost)
-							lowestCost = nodeRecord.estimatedCost
-							lowestCostIndex  = nodeRecord.index
+while(openList.Num() != 0)
+	lowestCostIndex = INDEX_NONE
+	float lowestCost = FLT_MAX
+	for each nodeRecord in openList
+		if(nodeRecord.estimatedCost < lowestCost)
+			lowestCost = nodeRecord.estimatedCost
+			lowestCostIndex  = nodeRecord.index
 					
-				if( lowestCostIndex != IndexNonde)
-						currentRecord = openList.At(lowestCostIndex)
-					
-				if(currentRecord.pNode == endCell)
-					break // FOUND
-				
-				recordConnections = empty TArray<FGridConnection>
-				recordConnections = currentRecord.pNode.connections
-				
-				for each connection in recordConnection
-					costSoFar = currentRecord.CostSoFar + connection.cost
-					for each closed in closedList
-						if( connection.To == closed.node.index)
-							if(closed.costSoFar <= costSoFar)
-								break
-							else
-								closedList.Remove(closed)
-				for each open in openList
-				if(connection.from == open.node.index)
-				if(open.costSoFar <= costSoFar)
-				break;
-								else
-									openList.Remove(open)
-				
-						FNodeRecord newRecord
-						NewRecord.node = GetCellAtIndex(connection.To)
-						newRecord.connection = connection
-						newRecord.costSoFar - costSoFar
-						newRecord.estimatedTotalCost = costSoFar + Cost(newRecord.node, endCell)
-						openList.AddUnique(newRecord)
-				
-			openList.Remove(currentRecord);
-			closedList.AddUnique(currentRecord);
+	if( lowestCostIndex != IndexNonde)
+		currentRecord = openList.At(lowestCostIndex)				
+	if(currentRecord.pNode == endCell)
+		break // FOUND
 
-			
-//////
+	recordConnections = empty TArray<FGridConnection>
+	recordConnections = currentRecord.pNode.connections
+				
+	for each connection in recordConnection
+		costSoFar = currentRecord.CostSoFar + connection.cost
+		for each closed in closedList
+			if( connection.To == closed.node.index)
+				if(closed.costSoFar <= costSoFar)
+					break
+				else
+					closedList.Remove(closed)
+		for each open in openList
+			if(connection.from == open.node.index)
+				if(open.costSoFar <= costSoFar)
+					break;
+				else
+					openList.Remove(open)
+
+
+		FNodeRecord newRecord
+		NewRecord.node = GetCellAtIndex(connection.To)
+		newRecord.connection = connection
+		newRecord.costSoFar - costSoFar
+		newRecord.estimatedTotalCost = costSoFar + Cost(newRecord.node, endCell)
+		openList.AddUnique(newRecord)
+				
+	openList.Remove(currentRecord);
+	closedList.AddUnique(currentRecord);
 
 while(currenRecord.node != startCell)
 	path.AddUnique(currentRecord.node)
 	for each closed in closedList
 		if(currentRecord.conncetion.from == closed.node.index
 			currentRecord = closed
+			break
 
 for each cell* in path
 	cell.isCorridor = true;
