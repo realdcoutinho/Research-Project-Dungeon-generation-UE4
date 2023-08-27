@@ -1,6 +1,6 @@
 # Research-Project-Dungeon-generation-UE4
 
-##Introduction:
+## Introduction:
 This research project focuses on developing a procedural dungeon generation system within the Unreal Engine 4 environment using C++. The primary objective is to create a dynamic process that generates diverse and randomized dungeons for gameplay.
 
 ## Dungeon:
@@ -12,6 +12,8 @@ The **SetDungeons()** function in the **C_Generate** class manages dungeon confi
 To introduce an element of randomness into the dungeon generation, a random integer within the range of 0 to 1000 is obtained from **RandRange**. This integer acts as a seed for an **FRandomStream**. Given the cell dimensions in m_pGrid, the number of rows and columns, and the minimum position, maximum x and y positions are established for each dungeon.
 With the foundational parameters set, the next step is to define dungeon attributes. By employing the previously mentioned **FRandomStream** alongside the specified minimum and maximum center positions, a genuinely random center point is computed. The same process is repeated for determining the dungeon's width and depth, utilizing the designated measurement ranges.
 Once the random center is calculated, it is incorporated into the m_pGrid, which identifies the corresponding cell and returns both its center location and index. At this juncture, the system examines existing dungeons. A radius is established (maximum size of width and depth plus a margin). If another dungeon already occupies the space defined by the current dungeon's center and the calculated radius, the process restarts. Conversely, if the area is unoccupied, the cell is designated as filled, and the current dungeon's attributes (center, width, and depth) are finalized. Furthermore, the dungeon's visibility is activated.
+
+![DungeonCreation Giph](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/3392140b-5b69-439c-a8af-1bd3c20ec900)
 
 https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/927ada2c-2ec6-4a06-b244-643f1e367561
 
