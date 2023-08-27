@@ -115,6 +115,9 @@ Should there arise any inquiries regarding the specific data types and structure
 
 
 ## Grid:
+
+![a](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/456d6de5-4aae-4dba-8a6a-a4d56acd7327)
+
 Before delving into the intricacies of the **AStartPath()** function that the **C_Graph** has passed to us, it is prudent to provide a brief overview of the class itself—its inception, purpose, and functionalities.
 
 As discerned from our prior discussions, the **C_Grid** class serves two pivotal roles: the first involves the establishment of the _grid structure_, delineating the _placement of dungeons_ and meticulously managing their availability. The second pertains to the critical function of _navigating paths_ between locations, a responsibility it undertakes through interactions with **C_Graph**.
@@ -227,7 +230,7 @@ This research journey has bestowed upon me a solid groundwork for mastering proc
 * [A* Pathfinding](https://www.youtube.com/watch?v=-L-WgKMFuhE)
 * [A* (A Star) Search and Heuristics Intuition](https://www.youtube.com/watch?v=71CEj4gKDnE)
 * [A* Algorithm pseudocode](https://mat.uab.cat/~alseda/MasterOpt/AStar-Algorithm.pdf)
-
+* [A* algorithm shortest path finder for 5 Axis laser ablation] https://andrewjinho.com/2018/09/10/aa-star-search-algorithm-shortest-path-finder/
 
 
 
