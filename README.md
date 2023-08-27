@@ -230,7 +230,7 @@ This research journey has bestowed upon me a solid groundwork for mastering proc
 * [A* Pathfinding](https://www.youtube.com/watch?v=-L-WgKMFuhE)
 * [A* (A Star) Search and Heuristics Intuition](https://www.youtube.com/watch?v=71CEj4gKDnE)
 * [A* Algorithm pseudocode](https://mat.uab.cat/~alseda/MasterOpt/AStar-Algorithm.pdf)
-* [A* algorithm shortest path finder for 5 Axis laser ablation] https://andrewjinho.com/2018/09/10/aa-star-search-algorithm-shortest-path-finder/
+* [A* algorithm shortest path finder for 5 Axis laser ablation](https://andrewjinho.com/2018/09/10/aa-star-search-algorithm-shortest-path-finder/)
 
 
 
