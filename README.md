@@ -13,10 +13,6 @@ To introduce an element of randomness into the dungeon generation, a random inte
 With the foundational parameters set, the next step is to define dungeon attributes. By employing the previously mentioned **FRandomStream** alongside the specified minimum and maximum center positions, a genuinely random center point is computed. The same process is repeated for determining the dungeon's width and depth, utilizing the designated measurement ranges.
 Once the random center is calculated, it is incorporated into the m_pGrid, which identifies the corresponding cell and returns both its center location and index. At this juncture, the system examines existing dungeons. A radius is established (maximum size of width and depth plus a margin). If another dungeon already occupies the space defined by the current dungeon's center and the calculated radius, the process restarts. Conversely, if the area is unoccupied, the cell is designated as filled, and the current dungeon's attributes (center, width, and depth) are finalized. Furthermore, the dungeon's visibility is activated.
 
-<p align="center">
-![DungeonCreation Giph](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/3392140b-5b69-439c-a8af-1bd3c20ec900)>
-</p>
-
 ![DungeonCreation Giph](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/3392140b-5b69-439c-a8af-1bd3c20ec900)
 
 ## Delaunay Triangulation: 
@@ -62,6 +58,9 @@ for each triangle in triangulation
 The process of triangulation, while significant, proves insufficient to meet the objectives outlined in this project. Merely establishing edges through triangulation falls short of our intent to transform each edge into a **functional** pathway linking the dungeons. Our aspiration encompasses the creation of a comprehensive approach, enabling the identification of a **minimum spanning path** interconnecting all dungeons, characterized by the absence of redundant routes. To achieve this, we turn to an additional algorithm, namely the **Minimum Spanning Tree** **(MST)** algorithm.
 
 A **Minimum Spanning Tree** represents a subset of edges extracted from a connected, **edge-weighted graph**. This subset serves the purpose of interconnecting all vertices devoid of cycles, all the while maintaining the minimal aggregate edge weight possible. Essentially, this algorithm offers a method to determine the most **resource-efficient** means to establish connections among a given set of vertices.
+
+![mst](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/ecfbbd37-e3bd-4742-bc1c-ea867bee9684)
+
 
 However, prior to embarking on the coding phase for this algorithm, several preparatory measures are imperative. Foremost, a comprehensive inventory of edges to be employed within the **Minimum Spanning Tree** must be assembled.
 
@@ -222,6 +221,7 @@ This research journey has bestowed upon me a solid groundwork for mastering proc
 * [An implementation of Watson's algorithm for computing
 2-dimensional Delaunay triangulations 
 ](https://www.newcastle.edu.au/__data/assets/pdf_file/0018/22482/07_An-implementation-of-Watsons-algorithm-for-computing-two-dimensional-Delaunay-triangulations.pdf)
+* [Minimum Spanning Tree](https://www.designcoding.net/minimum-spanning-tree/)
 * [Prim's Minimum Spanning Tree Algorithm | Graph Theory](https://www.youtube.com/watch?v=jsmMtJpPnhU&t=1s)
 * [Algoritmo de Prim ](https://www.youtube.com/watch?v=cplfcGZmX7I)
 * [A* Pathfinding](https://www.youtube.com/watch?v=-L-WgKMFuhE)
