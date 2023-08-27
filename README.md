@@ -22,10 +22,6 @@ Now, having established the static meshes for the dungeons with their visibility
 
 Subsequently, the compilation of all these dungeon center points ensues, and the C_Graph initiates the Triangulation procedure. Below, you will find a representation of the aforementioned algorithm in pseudo-code.
 
-locations = TArray<FVector> //center of each dungeon
-triangulation = empty TArray<FTriangles>
-add super-triangle to triangulation 
-
 ![pseudoCode](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/4613edca-2d0d-4424-b9fe-dae556a82940)
 
 
