@@ -36,7 +36,7 @@ However, prior to embarking on the coding phase for this algorithm, several prep
 
 ![getedges](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/9498b0cc-8e49-44ea-8b05-93eefefd3fc1)
 
-#### Node creation:
+* **Node creation**:
 We begin by clearing the _nodesArray_, which is a collection to hold nodes. Then, a map called _nodesMap_ is created. This map will help organize nodes based on their positions. For each _edge_ in the _triangulationEdges_, the code checks if nodes already exist for the start and end points of the edge in the _nodesMap_. If not, new nodes are created and initialized with the corresponding locations. Each edge is then connected to the appropriate nodes by adding the edge to their _connection lists_.
 _Unique nodes_ are extracted from the _nodesMap_ and added to the _nodesArray_.
 Moving on, a new array called _allEdges_ is set up. For each node in the _nodesArray_, the code looks at the edges in its _connections list_. It identifies the corresponding end node by searching within the _nodesArray_. New edges are then formed using these start and end nodes, and these edges are added to the _allEdges_ array.
@@ -47,10 +47,10 @@ Having successfully completed the **Triangulation** process, including the extra
 The provided pseudo-code for this operation is presented below:
 ![image](https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/b075b38b-722a-4bae-b775-093c815606c2)
 
-#### Union helper function:
+* **Union helper function**:
 The function takes two pointers to _FTriangulationNode_ objects, referred to as **rootA** and **rootB**, as parameters. These nodes represent the root elements of the sets that need to be merged. The core logic of the function revolves around comparing the _ranks_ of these two root nodes. The rank is a measure of the depth or height of a node within its tree structure. It reflects the number of nodes in the longest path from the node to a leaf.
 
-#### FindRoot helper funtion:
+* **FindRoot helper funtion**:
 It identifies and returns the root node in a union-find data structure. The loop checks if the current node's parent isn't itself, iteratively updates the node to its parent until the root is found, and then returns the root node's pointer. 
 
 https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/95390453/436be407-8162-43aa-9358-6abc31139628
@@ -89,8 +89,8 @@ https://github.com/realdcoutinho/Research-Project-Dungeon-generation-UE4/assets/
 This project has unfolded as a journey dedicated to crafting a **procedural dungeon generation** system within the confines of **Unreal Engine 4 (UE4)**, leveraging the power of **C++** as the driving force. Beyond the project's inherent technical challenges, it has provided me with a profound learning opportunity to enhance my skills as a programmer, particularly as a **UE4** developer.
 The project's primary aim was to create an innovative and dynamic process that engenders a diverse array of _randomized_ dungeons, enriching gameplay experiences. Various critical aspects of dungeon generation have been addressed. The creation of dungeons was meticulously managed by the **C_Dungeon** class, carefully configuring room representations using **UStaticMeshComponent** elements. The generation process, while constrained by **UE4**'s restrictions on dynamic mesh generation, was efficiently handled through pre-creation during compile time. The concept of **Triangulation** was employed to establish interconnections between dungeons, laying the foundation for the subsequent **Minimum Spanning Tree (MST)** algorithm.
 The incorporation of the **MST** algorithm significantly elevated the project's complexity by introducing a _minimum spanning path_ that seamlessly interconnects all dungeons, devoid of redundancies. This approach not only aligns with the project's core objective but also paves the way for intriguing future work.
-One potential avenue for future exploration involves refining the Minimum Spanning Tree algorithm further. A specific aspect could be the exploration of different algorithms for the MST calculation, possibly focusing on efficient methodologies for calculating the diameter of the MST. The diameter of the MST carries substantial implications for the overall connectivity and traversal efficiency of the dungeon network.
- this research journey has bestowed upon me a solid groundwork for mastering procedural dungeon generation within UE4. It serves as a testament to the latent possibilities that emerge when algorithmic creativity intertwines with the art of game development. This accomplishment beckons forth an ongoing voyage of exploration and innovation in the captivating realm of dynamic gameplay environments, fueling my personal growth as a developer
+One potential avenue for future exploration involves refining the Minimum Spanning Tree algorithm further. A specific aspect could be the exploration of different algorithms for the MST calculation, possibly focusing on efficient methodologies for calculating the **diameter of the MST**. The diameter of the MST carries substantial implications for the overall connectivity and traversal efficiency of the dungeon network.
+This research journey has bestowed upon me a solid groundwork for mastering procedural dungeon generation within **UE4**. It serves as a testament to the latent possibilities that emerge when algorithmic creativity intertwines with the art of game development. This accomplishment beckons forth an ongoing voyage of exploration and innovation in the captivating realm of dynamic gameplay environments, fueling my personal growth as a developer
 
 ## Sources:
 https://www.youtube.com/watch?v=TlLIOgWYVpI
